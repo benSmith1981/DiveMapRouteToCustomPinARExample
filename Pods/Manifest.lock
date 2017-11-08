@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.5.1)
+  - ARCL (1.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - ARCL
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  ARCL: 193b108d6fd5277ce742be3af92ccf81bbdd2f3b
+
+PODFILE CHECKSUM: 7fd74511c4752938b834a7f1f1e4103b156b8915
+
+COCOAPODS: 1.2.1

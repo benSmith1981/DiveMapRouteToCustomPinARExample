@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DetailMapPinView" customModule="DiveMapExample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="196" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-LQ-hvf">
+                    <rect key="frame" x="0.0" y="0.0" width="196" height="180"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tph-Fu-wpr">
+                    <rect key="frame" x="48" y="8" width="101" height="105"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="101" id="Bi9-hq-1P7"/>
+                        <constraint firstAttribute="height" constant="105" id="qIy-OW-ded"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7F-NU-KLC">
+                    <rect key="frame" x="35" y="121" width="125" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="q9K-zo-s7h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwK-bO-hw6">
+                    <rect key="frame" x="58" y="150" width="81" height="23"/>
+                    <state key="normal" title="Show Detail"/>
+                    <connections>
+                        <action selector="seeDetails:" destination="iN0-l3-epB" eventType="touchUpInside" id="bcN-Rc-5mc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hlo-LQ-hvf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1F1-3S-Cu1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tph-Fu-wpr" secondAttribute="trailing" constant="47" id="1oG-lz-gaN"/>
+                <constraint firstItem="hlo-LQ-hvf" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="5LB-66-8LF"/>
+                <constraint firstItem="j7F-NU-KLC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="35" id="FoK-TG-xU3"/>
+                <constraint firstItem="hlo-LQ-hvf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="JVc-ZO-WsZ"/>
+                <constraint firstItem="Tph-Fu-wpr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="48" id="Oho-gk-eac"/>
+                <constraint firstItem="j7F-NU-KLC" firstAttribute="top" secondItem="Tph-Fu-wpr" secondAttribute="bottom" constant="8" id="QQg-zg-c1F"/>
+                <constraint firstItem="j7F-NU-KLC" firstAttribute="centerX" secondItem="hlo-LQ-hvf" secondAttribute="centerX" id="VSY-NH-CNs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jwK-bO-hw6" secondAttribute="trailing" constant="57" id="XIw-p2-b9w"/>
+                <constraint firstItem="Tph-Fu-wpr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="YYg-Wd-fld"/>
+                <constraint firstItem="jwK-bO-hw6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="58" id="Yyk-fw-Hps"/>
+                <constraint firstItem="jwK-bO-hw6" firstAttribute="top" secondItem="j7F-NU-KLC" secondAttribute="bottom" constant="8" id="oC1-hI-Lr8"/>
+                <constraint firstItem="hlo-LQ-hvf" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="pv9-mR-Hie"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jwK-bO-hw6" secondAttribute="bottom" constant="7" id="u9b-bP-yHe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backgroundContentButton" destination="hlo-LQ-hvf" id="bOJ-Hb-agI"/>
+                <outlet property="diveImageView" destination="Tph-Fu-wpr" id="FN9-ZR-WwR"/>
+                <outlet property="diveSiteName" destination="j7F-NU-KLC" id="mYe-jS-SQV"/>
+                <outlet property="seeDetailsButton" destination="jwK-bO-hw6" id="hHY-jq-axv"/>
+            </connections>
+            <point key="canvasLocation" x="-56" y="298"/>
+        </view>
+    </objects>
+</document>

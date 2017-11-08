@@ -1,0 +1,6 @@
+framework module Pods_DiveMapExample {
+  umbrella header "Pods-DiveMapExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
