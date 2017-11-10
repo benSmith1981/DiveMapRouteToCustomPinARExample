@@ -9,6 +9,7 @@ target 'DiveMapExample' do
     pod 'Alamofire' 
     pod 'ARCL'
     pod 'SVProgressHUD'
+    pod 'RealmSwift', '~> 3.0'
   target 'DiveMapExampleTests' do
     inherit! :search_paths
     # Pods for testing

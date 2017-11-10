@@ -27,6 +27,7 @@
 		B5D950771FA9DE5C004C5562 /* DiveMapServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D950761FA9DE5C004C5562 /* DiveMapServiceClass.swift */; };
 		B5D950791FA9EBF6004C5562 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D950781FA9EBF6004C5562 /* Constants.swift */; };
 		B5D9507B1FAA1505004C5562 /* MapViewControllerLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9507A1FAA1505004C5562 /* MapViewControllerLocationManager.swift */; };
+		B5E191CA1FB6072F00C26160 /* DetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E191C91FB6072F00C26160 /* DetailViewViewController.swift */; };
 		B5F200801FAB801F0076A2A3 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2007F1FAB801F0076A2A3 /* SearchTableViewController.swift */; };
 		B5F200821FACCF9B0076A2A3 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F200811FACCF9B0076A2A3 /* ARViewController.swift */; };
 		F3EC4E7CFB594362551D53F0 /* Pods_DiveMapExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A532B6F022434E35BC0C875 /* Pods_DiveMapExample.framework */; };
@@ -79,6 +80,7 @@
 		B5D950761FA9DE5C004C5562 /* DiveMapServiceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiveMapServiceClass.swift; sourceTree = "<group>"; };
 		B5D950781FA9EBF6004C5562 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5D9507A1FAA1505004C5562 /* MapViewControllerLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerLocationManager.swift; sourceTree = "<group>"; };
+		B5E191C91FB6072F00C26160 /* DetailViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewController.swift; sourceTree = "<group>"; };
 		B5F2007F1FAB801F0076A2A3 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		B5F200811FACCF9B0076A2A3 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		C4ECF16430AF8446A09904D5 /* Pods_DiveMapExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiveMapExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				B5D9507A1FAA1505004C5562 /* MapViewControllerLocationManager.swift */,
 				B5F2007F1FAB801F0076A2A3 /* SearchTableViewController.swift */,
 				B5D950451FA9CEA1004C5562 /* Main.storyboard */,
+				B5E191C91FB6072F00C26160 /* DetailViewViewController.swift */,
 			);
 			path = MapviewController;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				B5D950791FA9EBF6004C5562 /* Constants.swift in Sources */,
 				B5D950421FA9CEA1004C5562 /* AppDelegate.swift in Sources */,
 				B5D950731FA9D8F2004C5562 /* DiveMapAnnotation.swift in Sources */,
+				B5E191CA1FB6072F00C26160 /* DetailViewViewController.swift in Sources */,
 				B5F200821FACCF9B0076A2A3 /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

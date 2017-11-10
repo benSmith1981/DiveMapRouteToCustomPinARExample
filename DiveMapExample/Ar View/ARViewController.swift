@@ -17,6 +17,7 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneLocationView.run()
+        self.sceneLocationView.locationEstimateMethod = .mostRelevantEstimate
         view.addSubview(sceneLocationView)
         
         NotificationCenter.default.addObserver(self,
@@ -44,8 +45,8 @@ class ARViewController: UIViewController {
         var diveDict = notification.userInfo as! Dictionary<String, [DiveSite]>
         let diveSites = diveDict["data"]!
         for site in diveSites {
-            let coordinate = CLLocationCoordinate2D(latitude: site.lat!,
-                                                    longitude: site.lng!)
+            let coordinate = CLLocationCoordinate2D(latitude: Double(site.lat!)!,
+                                                    longitude: Double(site.lng!)!)
             addPins(coordinate: coordinate)
         }
     }

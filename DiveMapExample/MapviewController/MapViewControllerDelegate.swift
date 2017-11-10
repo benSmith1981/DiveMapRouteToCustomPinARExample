@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import UIKit
+private let kDiveMapAnnotationName = "kDiveMapAnnotationName"
 
 extension ViewController {
     
@@ -19,6 +20,15 @@ extension ViewController {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        //load from realm the deatil info
+        let annotation = view.annotation as! DiveMapAnnotation
+        //suppose we want to retrieve the data from REALM when the pin is pressed...if the data exists...
+        if let loadedGarageObjectFromRealm = annotation.diveSite.retrieveData() {
+            self.diveDetailSite = loadedGarageObjectFromRealm
+            performSegue(withIdentifier: "DetailView", sender: self)
+        } else {//if it doesn't exist then load from feed?
+            DiveMapService.diveSearchDetail(id: annotation.diveSite.id!)
+        }
         
     }
     

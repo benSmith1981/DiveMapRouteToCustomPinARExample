@@ -35,7 +35,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="StM-Cy-Ejt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178" y="645"/>
+            <point key="canvasLocation" x="2607" y="667"/>
         </scene>
         <!--AR View-->
         <scene sceneID="PdS-wi-meT">
@@ -127,6 +127,7 @@
                         <outlet property="mapView" destination="hpo-gt-zve" id="8h3-Ch-4hw"/>
                         <outlet property="searchBar" destination="Nlc-JW-oIe" id="2cr-eD-1kH"/>
                         <outlet property="searchBarLeadingConstraint" destination="k5s-xB-8Yg" id="pCY-sV-GP9"/>
+                        <segue destination="Fmt-Pg-wn1" kind="show" identifier="DetailView" id="gof-uw-3N1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -137,6 +138,33 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2100" y="-115"/>
+        </scene>
+        <!--Detail View View Controller-->
+        <scene sceneID="TQO-rY-mdW">
+            <objects>
+                <viewController id="Fmt-Pg-wn1" customClass="DetailViewViewController" customModule="DiveMapExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TDf-8j-GMv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSY-eO-usb">
+                                <rect key="frame" x="119" y="175" width="136" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="2wf-it-ohM"/>
+                    </view>
+                    <connections>
+                        <outlet property="diveName" destination="QSY-eO-usb" id="Ek0-cJ-wTX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qG3-Su-xbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3060" y="-112.89355322338831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u8Q-xH-0MO">

@@ -14,14 +14,13 @@ import ARCL
 protocol MapSearch {
     func showDiveSiteSelected(diveSite: DiveSite)
 }
-private let kDiveMapAnnotationName = "kDiveMapAnnotationName"
 
 class ViewController: UIViewController, MKMapViewDelegate, MapSearch, DiveDetailMapViewDelegate {
     
     func showDiveSiteSelected(diveSite: DiveSite) {
         //this si the point at which you can call your load region...cause you have the coord of the site selected..
-        var coord = CLLocationCoordinate2D.init(latitude: diveSite.lat!,
-                                                longitude: diveSite.lng!)
+        var coord = CLLocationCoordinate2D.init(latitude: Double(diveSite.lat!)!,
+                                                longitude: Double(diveSite.lng!)!)
         self.setZoomAndInitialLocation(location: coord)
         
     }
@@ -30,6 +29,8 @@ class ViewController: UIViewController, MKMapViewDelegate, MapSearch, DiveDetail
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     var diveSites: [DiveSite] = []
+    var diveDetailSite: DiveSite?
+
     var currentLocation: CLLocationCoordinate2D!
     
     var locationManager = CLLocationManager()
@@ -41,7 +42,7 @@ class ViewController: UIViewController, MKMapViewDelegate, MapSearch, DiveDetail
 //    @IBOutlet weak var searchBarLeadingConstraint: NSLayoutConstraint!
     var destinationCoordinate = CLLocationCoordinate2D()
     var sourceCoordinate = CLLocationCoordinate2D()
-    private let request = MKDirectionsRequest()
+    let request = MKDirectionsRequest()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,10 @@ class ViewController: UIViewController, MKMapViewDelegate, MapSearch, DiveDetail
         self.searchController = nil
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! DetailViewViewController
+        dest.DiveSite = self.diveDetailSite
+    }
     @IBAction func animateSearchBar(_ sender: Any) {
         self.searchBarLeadingConstraint.constant = 0
         
@@ -134,19 +139,23 @@ class ViewController: UIViewController, MKMapViewDelegate, MapSearch, DiveDetail
         print("memoery warning")
         // Dispose of any resources that can be recreated.
     }
-    
+    @objc func diveDetailResponse(notification: NSNotification) {
+        var diveDict = notification.userInfo as! Dictionary<String, DiveSite>
+        self.diveDetailSite = diveDict["data"]!
+
+    }
     @objc func diveSearchByGeoObservers(notification: NSNotification) {
         var diveDict = notification.userInfo as! Dictionary<String, [DiveSite]>
         diveSites = diveDict["data"]!
-        
+
         //Create an array of annotations
         var annotations: [DiveMapAnnotation] = []
         
         //looop the dive sites
         for site in diveSites {
             //create a coordinate for the dive site
-            let coordinate = CLLocationCoordinate2D.init(latitude: site.lat!,
-                                                      longitude: site.lng!)
+            let coordinate = CLLocationCoordinate2D.init(latitude: Double(site.lat!)!,
+                                                         longitude: Double(site.lng!)!)
             
             //create the custom Annotation Pin, with extra info, such as the dive data returned that has the ID of the dive site, so we can get the detailed information about the site..
             let annotation = DiveMapAnnotation.init(diveSite: site,
@@ -163,11 +172,11 @@ class ViewController: UIViewController, MKMapViewDelegate, MapSearch, DiveDetail
     }
     
     func detailsRequested(for diveSite: DiveSite) {
-        self.destinationCoordinate.latitude = diveSite.lat!
-        self.destinationCoordinate.longitude = diveSite.lng!
+        self.destinationCoordinate.latitude = Double(diveSite.lat!)!
+        self.destinationCoordinate.longitude = Double(diveSite.lng!)!
         
-        self.sourceCoordinate.latitude = self.mapView.userLocation.coordinate.latitude
-        self.sourceCoordinate.longitude = self.mapView.userLocation.coordinate.longitude
+//        self.sourceCoordinate.latitude = self.mapView.userLocation.coordinate.latitude
+//        self.sourceCoordinate.longitude = self.mapView.userLocation.coordinate.longitude
 
         coordinatesToMapViewRepresentation()
     }
